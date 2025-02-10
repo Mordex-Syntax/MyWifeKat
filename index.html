@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta property="og:title" content="My Wife Kat 💖">
+<meta property="og:description" content="A special place dedicated to Kat, the most wonderful person in the world.">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mordex-Syntax/MyWifeKat/main/Art/IMG-20250204-WA0036.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://mordex-syntax.github.io/MyWifeKat/">
+<meta property="og:type" content="website">
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <title>My Love and My Darling Wife Kat</title>
@@ -21,6 +29,30 @@
             justify-content: center;
             gap: 20px; /* Separación entre los botones */
         }
+@media (max-width: 768px) {
+    .embed-container iframe {
+        max-width: 100%;
+        height: 250px; /* Reduce la altura en móviles */
+    }
+
+    .container2 {
+        flex-direction: column; /* Apila los botones en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .boton {
+        width: 80%;
+        margin: 5px 0;
+    }
+}
+iframe {
+    width: 100%;  /* Se ajusta al contenedor */
+    max-width: 800px;  /* Máximo ancho en pantallas grandes */
+    height: 450px;  /* Ajusta la altura para que no sea tan largo */
+    border: none; /* Elimina el borde si lo tiene */
+    display: block; /* Evita espacios raros debajo */
+    margin: 0 auto; /* Lo centra */
+}
 
         .boton {
             padding: 15px 30px;
@@ -42,7 +74,25 @@
             box-shadow: 0px 4px 20px rgba(255, 0, 150, 0.8); /* Sombra rosa neón */
         }      
         
-      
+.embed-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 90vw; /* Máximo del 90% del viewport width */
+    height: auto;
+}
+
+.embed-container iframe {
+    width: 100%;
+    max-width: 600px; /* Ajusta según necesidad */
+    height: 400px; /* Ajusta según necesidad */
+    border: none;
+}
+
+
+
+     
 .container {
   display: flex;
   justify-content: center;
