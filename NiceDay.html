@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta property="og:title" content="My Wife Kat 💖">
+<meta property="og:description" content="A special place dedicated to Kat, the most wonderful person in the world.">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mordex-Syntax/MyWifeKat/main/Art/IMG-20250204-WA0036.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://mordex-syntax.github.io/MyWifeKat/">
+<meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Have a nice day SweetHearth</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            flex-direction: column;
+        }
+
+        .panel {
+            z-index: 1;
+            padding: 40px;
+            background: rgba(255, 154, 154, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(255, 182, 193, 0.4);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+        }
+
+        h1, h2 {
+            color: white;
+            margin: 10px 0;
+        }
+
+        .heart {
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            animation: fadeOut 9s linear forwards;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: inherit;
+            position: absolute;
+        }
+
+        .heart::before {
+            left: -25px;
+            top: 0;
+        }
+
+        .heart::after {
+            left: 0;
+            top: -25px;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; transform: translate(-50%, -50%) rotate(45deg) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -200%) rotate(45deg) scale(0.5); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="panel">
+        <h1>Ten un hermoso dia</h1>
+        <h2>PESITOO! </h2>
+    </div>
+
+    <script>
+        const hearts = [];
+        const pinks = ["#ff748c", "#ff8da1", "#ffa7b6"];
+
+        class Heart {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.theta = Math.random() * Math.PI * 2;
+                
+                const heartEl = document.createElement("div");
+                heartEl.classList.add("heart");
+                document.body.append(heartEl);
+                
+                const color = pinks[Math.floor(Math.random() * pinks.length)];
+                heartEl.style.background = color;
+                
+                this.el = heartEl;
+
+                setTimeout(() => {
+                    this.el.remove();
+                    hearts.splice(hearts.indexOf(this), 1);
+                }, 9000);
+            }
+
+            update() {
+                this.x += Math.cos(this.theta) * 1;
+                this.y += 1;
+                this.theta += 0.01;
+                this.el.style.left = `${this.x}px`;
+                this.el.style.top = `${this.y}px`;
+            }
+        }
+
+        setInterval(() => {
+            const heart = new Heart(Math.random() * window.innerWidth, -100);
+            hearts.push(heart);
+        }, 200);
+
+        setInterval(() => {
+            hearts.forEach((heart) => heart.update());
+        }, 10);
+    </script>
+
+</body>
+</html>
