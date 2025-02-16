@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta property="og:title" content="My Wife Kat 💖">
+<meta property="og:description" content="A special place dedicated to Kat, the most wonderful person in the world.">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mordex-Syntax/MyWifeKat/main/Art/IMG-20250204-WA0036.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://mordex-syntax.github.io/MyWifeKat/">
+<meta property="og:type" content="website">
+        <meta name="viewport" 
+              content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <title>Virtual Valentine's Day Card</title>
+        <style>
+            body { background-color: #1e1e1e; }
+            .envelope-wrapper { height: 380px; }
+            #envelope { position: relative; height: 240px; width: 260px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; margin-left: auto; margin-right: auto; top: 30px; background-color: #FF6863; box-shadow: -1px 10px 80px 10px #f21050; animation: envelope 1s linear infinite; }
+            @keyframes envelope { 0%{ scale: 1.03; } 50% { scale: 1.0; } 100% { scale: 1; } }
+            .envelope::before, .envelope::after { content:""; position: absolute; box-shadow: 500px 20px 40px 20px #f21050; }
+            #envelope:hover { cursor: pointer; }
+            .front { position: absolute; width: 0; height: 0; z-index: 3; }
+            .flap { border-top: 135px solid #FF6863; border-left: 130px solid transparent; border-right: 130px solid transparent; border-bottom: 80px solid transparent; transform-origin: top; }
+            .pocket { border-left: 130px solid #FF8BA0; border-right: 130px solid #FF8BA0; border-bottom: 120px solid #FFA8B5; border-top: 120px solid transparent; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; }
+            .letterfront { position: relative; background-color: white; width: 230px; height: 240px; top: 5px; border-radius: 10px; box-shadow: 0 2px 26px rgba(0, 0, 0, .12); margin-left: auto; margin-right: auto; transition: transform 0.8s; transform-style: preserve-3d; }
+            .letterfront h3, .letterfront p { padding: 10px; text-align: center; }
+            .open .flap { transform: rotatex(180deg); transition: transform 0.4s ease, z-index 0.6s; z-index: 1; }
+            .close .flap { transform: rotatex(0deg); transition: transform 0.4s 0.6s ease, z-index 1s; z-index: 5; }
+            .open .letterfront { transform: translatey(-150px); transition: transform 2s 0.6s ease, z-index 5s; z-index: 3; }
+            .close .letterfront { transform: translatey(0deg); transition: transform 0.4s ease, z-index 1s; z-index: 1; }
+            .reset { text-align: center; }
+            .reset button { font-weight: 800; background-color: transparent; border: solid 2px #FF6863; border-radius: 4px; color: #FF6863; display: inline-block; font-size: 14px; text-transform: uppercase; margin: 5px; margin-top: -300px; padding: 10px; }
+            .reset button:hover { background-color: #FF6863; cursor: pointer; color: white; }
+            .valentine { text-align: center; font-family: Helvetica, Arial, sans-serif; color:white; font-size: 30px; margin-top: 70px; animation: glow 1s ease-in-out infinite alternate; }
+            .flower, .flower2 { position: fixed; top: 0; width: 180px; margin-top: 190px; z-index: -1; }
+            .flower { left: 48%; margin-left: -200px; transform: rotate(-35deg); }
+            .flower2 { left: 50%; margin-left: 25px; transform: rotate(35deg); }
+        </style>
+    </head>
+    <body>
+        <h1 class="valentine">Hulloo pesito :3</h1>
+        <div class="envelope-wrapper">
+            <div id="envelope" class="close">
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+                <div class="letterfront">
+                  <h3>Ten un hermoso dia</h3>
+                  <p>Solo paso por aquí para decirte que te adoro y que espero que tengas un día hermoso. Siempre pienso en ti.</p>
+                    <p><b>Esto se actualiza siempre a las 5 pm :3<b></p>
+                </div>
+            </div>
+        </div>
+        <div class="reset">
+            <button id="open">Abrir</button>
+            <button id="reset">Reiniciar</button>
+        </div>
+        <img src="https://i.postimg.cc/s2GJC4WK/b7c333d82a5a4859f2549006f978f4a8.gif" class="flower">
+        <img src="https://i.postimg.cc/s2GJC4WK/b7c333d82a5a4859f2549006f978f4a8.gif" class="flower2">
+        <script>
+            $(document).ready(function() {
+                var envelope = $("#envelope");
+                var btn_open = $("#open");
+                var btn_reset = $("#reset");
+                envelope.click(function() { open(); });
+                btn_open.click(function() { open(); });
+                btn_reset.click(function() { close(); });
+                function open() { envelope.addClass("open").removeClass("close"); }
+                function close() { envelope.addClass("close").removeClass("open"); }
+            });
+        </script>
+    </body>
+</html>
